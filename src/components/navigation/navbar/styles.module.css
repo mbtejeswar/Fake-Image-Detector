@@ -1,0 +1,21 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5% 2%;
+    background-color: #3d3f42;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    border-bottom: 1px solid cyan;
+  }
+  
+  
+
+  
+  .text-big {
+    color: white;
+    font-size: 24px;
+    font-weight: 700;
+  }
