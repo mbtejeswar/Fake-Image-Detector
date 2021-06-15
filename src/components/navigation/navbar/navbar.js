@@ -7,12 +7,7 @@ class Navigation extends Component {
     this.state = {};
   }
 
-  componentDidMount() {
-  }
 
-  handleLogout = () => {
-
-  };
 
   render() {
     debugger;

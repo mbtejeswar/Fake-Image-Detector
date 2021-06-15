@@ -21,6 +21,10 @@ function App() {
     message.success("Files uploaded succesfully")
   }
 
+  const compareImages = ()=>{
+    message.success("Files uploaded succesfully")
+  }
+
   return (
     <div>
       <Navbar />
