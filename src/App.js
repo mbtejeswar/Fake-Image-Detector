@@ -15,6 +15,8 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     //logic to create new user...
+    console.log(event);
+    console.log(newUserInfo);
   };
 
   const showSuccessMessage = ()=>{
@@ -22,7 +24,12 @@ function App() {
   }
 
   const compareImages = ()=>{
-    message.success("Files uploaded succesfully")
+
+    setTimeout(function () {
+      message.success("Files uploaded succesfully")
+  }, 5000);
+
+    
   }
 
   return (
@@ -53,7 +60,7 @@ function App() {
       <form onSubmit={handleSubmit}>
       <div style = {{textAlign:"center"}}>
 
-      <Button  type="primary" onClick={showSuccessMessage}>
+      <Button  type="primary" onClick={compareImages}>
               Upload and compare images
             </Button>
         
