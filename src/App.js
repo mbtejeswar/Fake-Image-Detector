@@ -5,13 +5,17 @@ import 'antd/dist/antd.css';
 import { Button, message } from "antd";
 
 function App() {
-  const [newUserInfo, setNewUserInfo] = useState({
-    profileImages: []
-  });
+  const [newUserInfo, setNewUserInfo] = useState([]);
 
   const updateUploadedFiles = (files) =>
-    setNewUserInfo({ ...newUserInfo, profileImages: files });
+  {
+    console.log(files);
+    // setNewUserInfo({ ...newUserInfo, profileImages: files });
+    setNewUserInfo(prevArray => [...prevArray, files])
+    // setTheArray(prevArray => [...prevArray, newValue])
 
+  }
+ 
   const handleSubmit = (event) => {
     event.preventDefault();
     //logic to create new user...
@@ -19,17 +23,25 @@ function App() {
     console.log(newUserInfo);
   };
 
-  const showSuccessMessage = ()=>{
-    message.success("Files uploaded succesfully")
-  }
 
   const compareImages = ()=>{
 
-    setTimeout(function () {
-      message.success("Files uploaded succesfully")
-  }, 5000);
-
+    fetch('https://jsonplaceholder.typicode.com/todos/1')
+  .then(response => response.json())
+  .then(json => {
     
+    message.success("Images are a Match")
+    console.log(json)
+  }
+  
+  )
+    
+    console.log(newUserInfo)
+  //   setTimeout(function () {
+  //     message.success("Files uploaded succesfully")
+  // }, 5000);
+
+
   }
 
   return (
