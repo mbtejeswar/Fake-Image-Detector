@@ -29,8 +29,8 @@ https://fake-detection-tool.netlify.app
     Home page - http://localhost:3000/
 
 
-### Start Server - 
-    1.) Navigate to Server directory 
+### Start Server
+    1.) Navigate to Server directory  - cd server
     2.) Run Command - npm start
 
 
