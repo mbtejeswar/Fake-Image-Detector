@@ -14,7 +14,8 @@ app.use(cors(corsOptions));
 
 
 app.post('/imageMatch', (req, res)=>{
-    res.json({success:true}).send(200);
+
+    res.send({success:true});
 })
 
 // starting server on port 8081

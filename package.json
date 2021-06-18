@@ -8,7 +8,6 @@
     "@testing-library/user-event": "^12.1.10",
     "ant": "^0.2.0",
     "antd": "^4.16.3",
-    "axios": "^0.21.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "multer": "^1.4.2",

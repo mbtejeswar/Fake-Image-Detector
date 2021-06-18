@@ -26,15 +26,33 @@ function App() {
 
   const compareImages = ()=>{
 
-    fetch('https://jsonplaceholder.typicode.com/todos/1')
-  .then(response => response.json())
-  .then(json => {
+    try {
+
+      fetch('http://localhost:8081/imageMatch', {method: 'POST', headers: {
+        'Content-Type': 'application/json',
+      }})
+      .then(response => response.json())
+      .then(json => {
     
-    message.success("Images are a Match")
-    console.log(json)
-  }
+        if(json.success){
+          message.success("Images are a Match")
+        } else{
+          message.success("Images are not a match")
+        }
+        
+      }
+      
+      )
+        .catch((error)=>{
+          message.error("Internal Error");
+        })
+    } catch (error) {
+      message.error("Internal Error");
+    }
+
+
   
-  )
+ 
     
     console.log(newUserInfo)
   //   setTimeout(function () {
