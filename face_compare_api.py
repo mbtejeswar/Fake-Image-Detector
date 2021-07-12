@@ -70,5 +70,5 @@ def send_image_similarity():
 if __name__ == "__main__":
     from waitress import serve
     serve(app,port = 5000)
-#    app.run()
+    app.run()
     

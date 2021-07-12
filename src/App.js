@@ -3,6 +3,7 @@ import FileUpload from "./components/file-upload/file-upload.component";
 import Navbar from './components/navigation/navbar/navbar';
 import 'antd/dist/antd.css'; 
 import { Button, message } from "antd";
+import axios from 'axios';
 
 function App() {
   const [newUserInfo, setNewUserInfo] = useState([]);
@@ -19,9 +20,33 @@ function App() {
   const handleSubmit = (event) => {
     event.preventDefault();
     //logic to create new user...
-    console.log(event);
-    console.log(newUserInfo);
+    // console.log(event);
+    // console.log(newUserInfo);
+    const formData = new FormData();
+    newUserInfo.forEach(file=>{
+      formData.append("arrayOfFilesName", file);
+    });
+
+    console.log("Form data is"+ formData);
+    axios({
+      method: "POST",
+      url: 'localhost:5000/matchFiles',
+      data: formData,
+      headers: {
+        "Content-Type": "multipart/form-data"
+      }
+    })
   };
+
+
+  // const onFormSubmit = (e)=>{
+  //   e.preventDefault();
+  //   let payload = this.state;
+  //   console.log("in onFormSubmit!!! with state: ", this.state, "and payload: ", payload);
+  //   axios.post('/api/art', payload)
+  //   .then(function(response){
+  //   console.log('saved successfully')
+  // }); 
 
 
   const compareImages = ()=>{
